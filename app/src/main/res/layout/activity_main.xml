@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="10dp"
+    >
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        app:layout_constraintTop_toTopOf="@id/etName"
+        app:layout_constraintBottom_toBottomOf="@+id/etName"
+        app:layout_constraintEnd_toStartOf="@+id/etName"
+        android:textSize="16sp"
+        />
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:hint="Enter name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvName"
+        app:layout_constraintStart_toStartOf="@id/tvName"
+        app:layout_constraintBottom_toBottomOf="@id/tvName"
+        />
+
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        app:layout_constraintTop_toTopOf="@id/etEmail"
+        app:layout_constraintBottom_toBottomOf="@+id/etEmail"
+        app:layout_constraintEnd_toStartOf="@+id/etEmail"
+        android:textSize="16sp"
+        />
+    <EditText
+        app:layout_constraintTop_toBottomOf="@+id/etName"
+        android:layout_marginTop="10dp"
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:hint="Enter email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvEmail"
+        app:layout_constraintStart_toStartOf="@id/tvEmail"
+        app:layout_constraintBottom_toBottomOf="@id/tvEmail"
+        />
+
+      <Button
+          android:id="@+id/btnAdd"
+          android:layout_marginTop="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@+id/etEmail"
+          android:text="ADD RECORD"
+          />
+
+      <TextView
+          android:id="@+id/tvAllRec"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@+id/btnAdd"
+          android:text="All the Added Records."
+          android:gravity="center"
+          android:textColor="@color/black"
+          android:textSize="18sp"
+          />
+
+     <androidx.recyclerview.widget.RecyclerView
+         android:id="@+id/rvItemList"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+           app:layout_constraintTop_toBottomOf="@+id/tvAllRec"
+         android:visibility="gone"
+         tools:visibility="visible"
+         />
+    <TextView
+        android:id="@+id/tvNoRecFound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+          android:text="No Record Found."
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tvAllRec"
+        android:textSize="18sp"
+        android:visibility="visible"
+        tools:visibility="visible"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
